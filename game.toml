@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Warzone 2100"
+id = "SLUS-00819"
+players = 1
+exe = "disc/SLUS_008.19"
+disc = "disc/Warzone 2100 (USA).cue"
+discs = ["disc/Warzone 2100 (USA).cue"]
+disc_serials = ["SLUS-00819"]
+load_address = "0x80010100"
+entry_pc = "0x800BC454"
+text_size = "0x000CC000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Warzone 2100 (USA).bin"
+cue_name = "Warzone 2100 (USA).cue"
+boot_exe = "SLUS_008.19"
+known_sizes = [703911264]
+known_md5 = [
+  "531da2fee44eb221dc30efa367aea62e",
+]
+known_sha1 = [
+  "715d65d8a7488fabf825a6d8271d8e612cce20ba",
+]
+known_crc32 = [
+  "d26480d9",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Warzone 2100 Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "c39fe74d5e8043c0f82f7085e977cbc578292c672139d5352718158fc172a0f5"

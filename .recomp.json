@@ -1,0 +1,13 @@
+{
+  "$schema": "https://recomp.fyi/schema/v1.json",
+  "game": "Warzone 2100",
+  "system": "PS1",
+  "type": "recomp",
+  "toolchain": "psxrecomp",
+  "status": "exploring",
+  "project": "warzone-2100-recomp",
+  "original": {
+    "region": "USA",
+    "serial": "SLUS-00819"
+  }
+}

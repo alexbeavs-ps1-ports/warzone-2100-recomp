@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "warzone-2100-psx",
+  "name": "Warzone 2100",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "warzone-2100-recomp",
+  "rom_identity": {
+    "crc32": [
+      "d26480d9"
+    ],
+    "md5": [
+      "531da2fee44eb221dc30efa367aea62e"
+    ],
+    "sha1": [
+      "715d65d8a7488fabf825a6d8271d8e612cce20ba"
+    ],
+    "disc_serials": [
+      "SLUS-00819"
+    ],
+    "sizes": [
+      703911264
+    ],
+    "filenames": [
+      "Warzone 2100 (USA).cue",
+      "Warzone 2100 (USA).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "disc_fps": [
+      "c39fe74d5e8043c0f82f7085e977cbc578292c672139d5352718158fc172a0f5"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/warzone-2100-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "warzone-2100-*-windows-x64.zip",
+      "linux-x64": "warzone-2100-*-linux-x64.zip",
+      "macos-arm64": "warzone-2100-*-macos-arm64.zip",
+      "macos-x64": "warzone-2100-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "warzone_2100.exe",
+    "linux": "warzone_2100",
+    "macos": "warzone_2100"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/warzone-2100-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
